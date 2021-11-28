@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="baseLayout"
+		template="/WEB-INF/views/layout.jsp">
+		<put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/footer.jsp" />
+	</definition>
+
+	<definition name="main" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/main.jsp" />
+	</definition>
+
+	<definition name="man" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/man.jsp" />
+	</definition>
+
+	<definition name="maninsert" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/maninsert.jsp" />
+	</definition>
+
+	<definition name="manList" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/manList.jsp" />
+	</definition>
+
+	<definition name="manModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/manModify.jsp" />
+	</definition>
+
+	<definition name="manSearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/manSearch.jsp" />
+	</definition>
+
+
+	<definition name="deleteform" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/deleteform.jsp" />
+	</definition>
+
+	<definition name="bookmanagemain" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bookmanagemain.jsp" />
+	</definition>
+
+	<definition name="bookinput" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bookinput.jsp" />
+	</definition>
+
+	<definition name="bookcontent" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bookcontent.jsp" />
+	</definition>
+	
+	<definition name="booksearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/booksearch.jsp" />
+	</definition>
+	
+	<definition name="bookmainlist" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bookmainlist.jsp" />
+	</definition>
+	
+	<definition name="daeban" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/daeban.jsp" />
+	</definition>
+	
+	<definition name="dae" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/dae.jsp" />
+	</definition>
+	
+	<definition name="dblist" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/dblist.jsp" />
+	</definition>
+	
+</tiles-definitions>

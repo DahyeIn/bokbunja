@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezen.tiles.bookinter">
+
+	<insert id="insertdata">
+		INSERT INTO BOOK(BOOKNUMBER, BOOKTITLE, BOOKAUTHOR,
+		BOOKCONTENT, BOOKPUBLISHER,
+		BOOKSTOCK, BOOKCATE, BOOKRENTABLE)
+		VALUES(book_seq.nextval,#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param5})
+	</insert>
+
+	<select id="out" resultType="com.ezen.tiles.bookDTO">
+		SELECT * FROM BOOK ORDER BY
+		BOOKNUMBER ASC
+	</select>
+
+	<select id="outnumber" resultType="com.ezen.tiles.bookDTO">
+		SELECT * FROM BOOK ORDER BY
+		BOOKNUMBER ASC
+	</select>
+
+	<select id="outcate" resultType="com.ezen.tiles.bookDTO">
+		SELECT * FROM BOOK ORDER BY
+		BOOKCATE ASC
+	</select>
+
+	<delete id="delete">
+		DELETE FROM BOOK WHERE BOOKNUMBER = #{param1}
+	</delete>
+
+	<select id="bookcontent" resultType="com.ezen.tiles.bookDTO">
+		SELECT * FROM BOOK WHERE
+		BOOKNUMBER = #{param1}
+	</select>
+
+	<select id="booksearchauthor"
+		resultType="com.ezen.tiles.bookDTO">
+		SELECT * FROM BOOK WHERE BOOKAUTHOR LIKE '%'||#{param1}||'%'
+	</select>
+
+	<select id="booksearchtitle" resultType="com.ezen.tiles.bookDTO">
+		SELECT * FROM BOOK WHERE
+		BOOKTITLE LIKE '%'||#{param1}||'%'
+	</select>
+
+	<select id="deabanlist" resultType="com.ezen.tiles.bookDTO">
+		SELECT * FROM BOOK ORDER BY
+		BOOKNUMBER ASC
+	</select>
+
+	<select id="list" resultType="com.ezen.tiles.bookDTO">
+		SELECT * FROM BOOK WHERE
+		BOOKNUMBER=#{param1}
+	</select>
+
+	<update id="insertrent">
+		UPDATE BOOK SET BOOKRENTING = BOOKRENTING+1,
+		BOOKRENTABLE = BOOKRENTABLE-1 WHERE
+		BOOKNUMBER = #{param1}
+	</update>
+
+	<update id="returnbook">
+		UPDATE BOOK SET BOOKRENTING = BOOKRENTING-1,
+		BOOKRENTABLE = BOOKRENTABLE+1 WHERE
+		BOOKNUMBER = #{param1}
+	</update>
+
+</mapper>

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+top {
+	background-color: #66CC99;
+	height: 90px;
+	line-height: 90px;
+	text-align: center;
+	border-radius: 50px;
+}
+
+.footer {
+	text-align: center;
+	height: 55px;
+	line-height: 55px;
+	background-color: #66CC99;
+	border-radius: 50px;
+	margin-bottom: 200px;
+}
+.maninsert {
+	margin-left: 200px;
+}

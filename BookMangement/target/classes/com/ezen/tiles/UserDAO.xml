@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezen.tiles.UserInter">
+
+	<select id="listout" resultType="com.ezen.tiles.UserDTO">
+		SELECT * FROM MANAGE_USER ORDER
+		BY USERNO ASC
+	</select>
+
+	<insert id="maninsertdata">
+		INSERT INTO
+		MANAGE_USER(USERNO,USERNAME,USERTEL,USERMAIL) VALUES (USERNO.NEXTVAL,
+		#{param1}, #{param2},
+		#{param3})
+	</insert>
+
+	<delete id="manDelete">
+		DELETE FROM MANAGE_USER WHERE USERNO = #{param1}
+	</delete>
+
+	<update id="manModifydata">
+		UPDATE MANAGE_USER SET USERNAME=#{param2},
+		USERTEL=#{param3},
+		USERMAIL=#{param4} WHERE USERNO = #{param1}
+	</update>
+
+	<select id="manSearch1" resultType="com.ezen.tiles.UserDTO">
+		SELECT * FROM MANAGE_USER
+		WHERE USERNO LIKE '%'||#{param1}||'%'
+	</select>
+
+	<select id="manSearch2" resultType="com.ezen.tiles.UserDTO">
+		SELECT * FROM MANAGE_USER
+		WHERE USERNAME LIKE '%'||#{param1}||'%'
+	</select>
+
+	<update id="insertrent">
+		update MANAGE_USER set rentable = rentable-1 where
+		username=#{param1}
+	</update>
+
+	<update id="returnbook">
+		update MANAGE_USER set rentable = rentable+1 where
+		username=#{param1}
+	</update>
+
+	<select id="list" resultType="com.ezen.tiles.UserDTO">
+		SELECT * FROM MANAGE_USER where
+		username=#{param1}
+	</select>
+
+	<select id="search" resultType="com.ezen.tiles.UserDTO">
+		SELECT * FROM MANAGE_USER where
+		username=#{param1}
+	</select>
+
+	<select id="just" resultType="com.ezen.tiles.UserDTO">
+		select username from manage_user
+	</select>
+
+</mapper>

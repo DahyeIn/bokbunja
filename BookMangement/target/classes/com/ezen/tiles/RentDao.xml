@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezen.tiles.Rentinter">
+
+	<insert id="insertrent">
+		INSERT INTO
+		RENT(BOOKNUMBER,BOOKTITLE,BOOKAUTHOR,BOOKPUBLISHER,USERNAME,BOOKCATE)
+		VALUES(#{param1}, #{param2}, #{param3}, #{param4}, #{param5},
+		#{param6})
+	</insert>
+	
+	<select id="dblist" resultType="com.ezen.tiles.RentDTO">
+		SELECT 
+		BOOKNUMBER, BOOKTITLE, BOOKAUTHOR, BOOKPUBLISHER, USERNAME, BOOKCATE, TO_CHAR(RENTDATE, 'YY-MM-DD')RENTDATE, TO_CHAR(RETURNDATE, 'YY-MM-DD')RETURNDATE
+		FROM RENT
+	</select>
+	
+	<delete id="returnbook">
+		DELETE FROM RENT WHERE BOOKNUMBER = #{param1} AND USERNAME = #{param2}
+	</delete>
+	
+</mapper>
